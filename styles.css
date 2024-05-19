@@ -329,6 +329,7 @@ footer p {
     box-align: center
 }
 
+
 .project4-images img {
     width: 30%;
     height: auto;
@@ -410,8 +411,8 @@ footer p {
 }
 
 .projectss3-images img {
-    width: 20%;
-    height: 100px;
+    width: 80%;
+    height: auto;
     margin-top: 10px;
     border-radius: 10px;
 }
