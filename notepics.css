@@ -1,23 +1,25 @@
 body, html {
+    font-family: 'Source Code Pro', monospace;
     margin: 0;
     padding: 0;
-    font-family: 'Source Code Pro', monospace;
     background-color: #f4f4f4;
     color: #333;
 }
-
-header {
+nav {
     background-color: #ffe9e9;
-    padding: 10px 20px;
-    text-align: center;
+    color: rgb(72, 72, 72);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
-    color: #333;
+    color: rgb(72, 72, 72);
     text-decoration: none;
-    padding: 5px 10px;
-    margin: 0 5px;
-    font-weight: 600;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+    font-weight: 300;
 }
 
 nav a:hover {
