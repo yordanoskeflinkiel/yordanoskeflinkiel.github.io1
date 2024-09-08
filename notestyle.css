@@ -28,14 +28,6 @@ nav a:hover {
     background-color: #fff7f7;
 }
 
-/* Grid layout for sections */
-.main-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
 section {
     background-color: white;
     border-radius: 8px;
@@ -122,11 +114,11 @@ button.learn-more:hover {
 /* Main grid keeps its multi-column layout */
 .main-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptive grid columns */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: auto;
     gap: 20px;
     padding: 20px;
 }
-
 /* Specific styles for image sections to stack them vertically */
 .image-section {
     background-color: #fff;
@@ -157,9 +149,6 @@ button.learn-more:hover {
     }
 }
 
-/* Keep text sections like 'overview', 'features' in the default grid layout */
-section#overview, section#features, section#design, section#future {
-    /* Optional: Styling if you want to differentiate or fine-tune appearance */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
