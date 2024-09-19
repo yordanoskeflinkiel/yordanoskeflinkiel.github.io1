@@ -329,7 +329,6 @@ footer p {
     box-align: center
 }
 
-
 .project4-images img {
     width: 30%;
     height: auto;
@@ -410,7 +409,6 @@ footer p {
     background-color: #d8c6c6;
 }
 
-
 .projectss3-images img {
     width: 70%;
     height: auto;
@@ -432,7 +430,6 @@ footer p {
     border-radius: 10px;
 }
 
-
 footer2 {
     text-align: center;
     padding: 10px;
@@ -451,4 +448,72 @@ footer2 p2{
 }
 footer2 a:hover {
     color: #ffffff;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.project-sneak-peek {
+    text-align: center;
+    padding: 40px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.project-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+.project-video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; 
 }
