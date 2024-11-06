@@ -517,3 +517,39 @@ footer a {
     height: auto;
     border-radius: 5px; 
 }
+.extra-curricular {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.extra-curricular h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.extra-curricular-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.extra-curricular-list li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.extra-curricular-logo {
+    width: 60px; 
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
