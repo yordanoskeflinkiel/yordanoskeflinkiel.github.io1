@@ -1,116 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Work | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="yor icon.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Work | Yordanos Keflinkiel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="girlastronaut.png" type="image/png" sizes="256x256" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --primary: #0f766e;   /* Teal */
+    --accent: #6ee7b7;    /* Mint */
+    --dark-bg: #1f2937;
+    --light-bg: #f9fafb;
+    --shadow: rgba(0, 0, 0, 0.07);
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--light-bg);
+    color: #111827;
+    line-height: 1.6;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background-image: url('nebula.jpg');
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.311); 
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+   nav a:hover {
+    color: rgb(207, 207, 207);
+  }
+  .nav-button {
+  background-color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  font-weight: 550;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.407);
+  transform: translateY(-2px);
+}
+
+  section {
+    max-width: 1600px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #6c6c6c;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+
+  .project {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow);
+    margin-bottom: 4rem;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .project-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-text {
+    flex: 2;
+  }
+
+  .project h3 {
+    margin-top: 0;
+    color: #1f2937;
+    font-size: 1.5rem;
+    border-left: 4px solid #6c6c6c;
+    padding-left: 0.75rem;
+  }
+
+  .project-icon img {
+    max-width: 64px;
+    border-radius: 8px;
+  }
+
+  .project-images,
+  .project2-images,
+  .project5-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+
+  .project-images img,
+  .project2-images img,
+  .project5-images img {
+    max-width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: transform 0.3s ease;
+  }
+
+  .project-images img:hover,
+  .project2-images img:hover,
+  .project5-images img:hover {
+    transform: scale(1.05);
+  }
+
+ footer {
+    background: linear-gradient(to right, #606060, #000000);
+    color: white;
+    text-align: center;
+    padding: 2.0rem 1rem;
+    font-size: 0.95rem;
+    margin-top: 4rem;
+  }
+
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .project-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .project-icon {
+      margin-top: 1rem;
+    }
+  }
+       #scroll-pet {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-40px); }
+    }
+
+    #scroll-pet {
+        animation: float 3s ease-in-out infinite;
+    }
+</style>
 </head>
 <body>
-    <nav>
-        <div class="nav-left">
-            <a href="about.html">About Me</a>
-            <a href="https://yordanoskeflinkiel.github.io/Yordanos_Keflinkiel-Resume2024.pdf" target="_blank">Download Resume</a>   
-        </div>
-        <div class="nav-right">
-            <a href="coding_projects.html">Projects</a>
-            <a href="3d_work.html">3D Work</a>
-        </div>
-    </nav>
+    <img src="meteor.png" alt="Scroll Pet" id="scroll-pet">
+  <nav>
+  <div>
+    <a href="about.html" class="nav-button">About Me</a>
+  </div>
+  <div>
+    <a href="projects.html" class="nav-button">Projects</a>
+    <a href="3d_work.html" class="nav-button">3D Work</a>
+  </div>
+</nav>
 
-    <section class="project">
-        <h2>3D Work</h2>
-    </section>
-    <section class="project-section">
-        <div class="project">
-            <div class="project-content">
-                <div class="project-text">
-                    <h3>After The Snow Storm</h3>
-                    <p>This project started with building a simple house covered in snow, which I found in a YouTube tutorial. <br>Over the course of 2 to 3 days, I added my own touches, including a garage, cars, and a street setting, along with a neighbor to complete the scene. <br>You can witness the progression of this project through the photos below, displayed in a linear manner.
-                    </p>
-                </div>
-                <div class="project-icon">
-                    <img src="house.png" alt="Project Icon 1">
-                </div>
-            </div>
-            <div class="project-images">
-                <img src="project 1-1.png" alt="Project Image 1-1">
-                <img src="project 1-2.png" alt="Project Image 1-2">
-                <img src="project 1-3.png" alt="Project Image 1-3">
-                <img src="project 1-4.png" alt="Project Image 1-4">
-            </div>
-        </div>
-    </section>
+  <section>
+    <h2 class="section-title">3D Work</h2>
 
-    <!-- Section for Project 2 -->
-    <section class="project-section">
-        <div class="project">
-            <div class="project-content">
-                <div class="project-text">
-                    <h3>Morning Kitchen</h3>
-                    <p>This original project captures the essence of a morning kitchen scene, complete with a fog element. <br>The setting can be interpreted as either an eerie morning view or the ambiance of a kitchen on an early, cloudy day. <br>This project was completed over two days and includes the rendered below.
-                    </p>
-                </div>
-                <div class="project-icon">
-                    <img src="kitchen.png" alt="Project Icon 2">
-                </div>
-            </div>
-            <div class="project2-images">
-                <img src="project 2-1.png" alt="Project Image 2-2">
-                
-            </div>
+    <!-- Projects -->
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>After The Snow Storm</h3>
+          <p>This project began with a tutorial-based house and evolved into a custom snow-covered neighborhood scene over 2–3 days.</p>
         </div>
-    </section>
-    <section class="project-section">
-        <div class="project">
-            <div class="project-content">
-                <div class="project-text">
-                    <h3>Cosy Room</h3>
-                    <p>This project is based on a YouTube tutorial, but I added a modern twist to make it uniquely mine. <br>It took about four days to complete, as it was one of my very first projects. <br>The final renders are shown below as the last two images.
-                    </p>
-                </div>
-                <div class="project-icon">
-                    <img src="bed.png" alt="Project Icon 2">
-                </div>
-            </div>
-            <div class="project-images">
-                <img src="project 3-4.PNG" alt="Project Image 2-1">
-                <img src="project 3-3.PNG" alt="Project Image 2-2">
-                <img src="project 3-1.png" alt="Project Image 2-3">
-                <img src="project 3-2.png" alt="Project Image 2-4">
-            </div>
+        <div class="project-icon">
+          <img src="house.png" alt="Snow Storm Icon" />
         </div>
-    </section>
-    
-    <section class="project-section">
-        <div class="project">
-            <div class="project-content">
-                <div class="project-text">
-                    <h3>Exploratory Projects</h3>
-                    <p>These are a few miscellaneous projects undertaken to evaluate various software tools and my current skills. <br>Despite their experimental nature, I am proud of each piece.
-                    </p>
-                </div>
-                <div class="project-icon">
-                    <img src="sword.png" alt="Project Icon 2">
-                </div>
-            </div>
-            <div class="project5-images">
-                <img src="project 5-1.PNG" alt="Project Image 2-1">
-                <img src="project 5-2.PNG" alt="Project Image 2-2">
-                <img src="project 5-4.jpg" alt="Project Image 2-3">
-               
-            </div>
+      </div>
+      <div class="project-images">
+        <img src="project 1-1.png" alt="Scene 1" />
+        <img src="project 1-2.png" alt="Scene 2" />
+        <img src="project 1-3.png" alt="Scene 3" />
+        <img src="project 1-4.png" alt="Scene 4" />
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Morning Kitchen</h3>
+          <p>A soft, moody kitchen scene designed with ambient fog. This piece blends cozy morning vibes with visual storytelling.</p>
         </div>
-    </section>
-    
-    <footer>
-        <p>Contact me at <a href="mailto:yordanostkeflinkiel@gmail.com">yordanostkeflinkiel@gmail.com</a> <br> View <a href="attributions.html">Icon Attributions</a><br> </p>
-        <img src="gmail.png" alt="Icon" class="footer-icon">
-    </footer>
+        <div class="project-icon">
+          <img src="kitchen.png" alt="Kitchen Icon" />
+        </div>
+      </div>
+      <div class="project2-images">
+        <img src="project 2-1.png" alt="Kitchen Render" />
+        <img src="project 2-2.png" alt="Kitchen Render" />
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Cosy Room</h3>
+          <p>Inspired by a tutorial but customized with a sleek, modern design. This was one of my earliest explorations in creating a full interior scene.</p>
+        </div>
+        <div class="project-icon">
+          <img src="bed.png" alt="Room Icon" />
+        </div>
+      </div>
+      <div class="project-images">
+        <img src="project 3-4.PNG" alt="Room 1" />
+        <img src="project 3-3.PNG" alt="Room 2" />
+        <img src="project 3-1.png" alt="Room 3" />
+        <img src="project 3-2.png" alt="Room 4" />
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Exploratory Projects</h3>
+          <p>Quick creative experiments to test ideas, tools, and techniques. Each one offered a valuable learning experience.</p>
+        </div>
+        <div class="project-icon">
+          <img src="sword.png" alt="Exploratory Icon" />
+        </div>
+      </div>
+      <div class="project5-images">
+        <img src="project 5-1.PNG" alt="Test Scene 1" />
+        <img src="project 5-2.PNG" alt="Test Scene 2" />
+        <img src="project 5-4.jpg" alt="Test Scene 3" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact me at <a href="mailto:yordanostkeflinkiel@gmail.com">yordanostkeflinkiel@gmail.com</a></p>
+  </footer>
 </body>
+<script>
+  document.getElementById('scroll-pet').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </html>
-
-
-
-

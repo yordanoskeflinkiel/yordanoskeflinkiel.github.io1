@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Yordanos Keflinkiel</title>
+  <link rel="icon" href="girlastronaut.png" type="image/png" sizes="256x256" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #000000; /* Teal */
+      --accent: #aaaaaa;  /* Mint */
+      --dark-bg: #1f2937;
+      --light-bg: #f9fafb;
+      --shadow: rgba(0, 0, 0, 0.214);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--light-bg);
+      color: #1f2937;
+    }
+
+    nav {
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 2rem;
+    background-image: url('nebula.jpg');
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.311); 
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: rgb(207, 207, 207);
+    }
+    .nav-button {
+  background-color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  font-weight: 550;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.407);
+  transform: translateY(-2px);
+}
+
+    section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: #000000;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: #6c6c6c;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px var(--shadow);
+      margin-bottom: 4rem;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .project-content {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .project-images img {
+      max-width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--shadow);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+     .projectme-images img {
+      max-width: 80px;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .project-description {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .project-link:hover {
+      color: var(--accent);
+    }
+
+    footer {
+    background: linear-gradient(to right, #606060, #000000);
+    color: white;
+    text-align: center;
+    padding: 2.0rem 1rem;
+    font-size: 0.95rem;
+    margin-top: 4rem;
+  }
+
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+    @media (max-width: 768px) {
+      .project-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+     #scroll-pet {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-40px); }
+    }
+
+    #scroll-pet {
+        animation: float 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+    <img src="ufo.png" alt="Scroll Pet" id="scroll-pet">
+  <nav>
+  <div>
+    <a href="about.html" class="nav-button">About Me</a>
+  </div>
+  <div>
+    <a href="projects.html" class="nav-button">Projects</a>
+    <a href="3d_work.html" class="nav-button">3D Work</a>
+  </div>
+</nav>
+
+  <section>
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-card">
+      <div class="project-content">
+        <div class="project-images">
+          <img src="project 4-2.png" alt="Scissor Lift Preview" />
+          <img src="project 4-1.png" alt="Scissor Lift Preview" />
+        </div>
+        <div class="project-description">
+          <p>This project showcases the design and development of a Scissor Lift model using SolidWorks as part of engineering coursework. It includes accurate mechanical components and realistic simulation of motion, aiming to reflect real-world industrial applications.</p>
+          <a href="scissorlift.html" class="project-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-content">
+        <div class="project-images">
+          <img src="snippet1.JPG" alt="code snippet" />
+          <img src="snippet2.JPG" alt="code snippet" />
+        </div>
+        <div class="project-description">
+          <p>Created an automated backup and monitoring system for Linux, using Bash, Cron, and Gmail SMTP. The system performed scheduled backups of critical files, monitored for changes in real time, and sent email alerts on backup status. We also implemented a retention policy to manage storage by deleting older backups automatically, ensuring data integrity with minimal manual intervention.</p>
+          <a href=""https://yordanoskeflinkiel.github.io/Backupscript.pdf" class="project-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-content">
+        <div class="project-images">
+          <img src="login.PNG" alt="Login Page" />
+          <img src="main.PNG" alt="Main Interface" />
+        </div>
+        <div class="project-description">
+          <p>A full-featured task management web app with PHP-based user registration and editing features. Includes profile editing, calendar view, task editing, and a colorful "cute" UI. A fun, practical build with room for future improvements.</p>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="project-card">
+      <div class="project-content">
+        <div class="project-images">
+          <img src="example.png" alt="C++ Note App" />
+          <img src="overview.png" alt="C++ Note App" />
+        </div>
+        <div class="project-description">
+          <p>My first C++ GUI project: a practical note-taking app with save and open functionality for .txt files. Despite early bugs and crashes, it turned into a great introduction to GUI development with C++.</p>
+          <a href="https://github.com/yordanoskeflinkiel/NoteTaking" class="project-link">GitHub Repo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-content">
+        <div class="projectme-images">
+          <img src="girlastronaut.png" alt="Portfolio Icon" />
+        </div>
+        <div class="project-description">
+          <p>This very website is also one of my projects! Designed to reflect my personal style, this site showcases both my technical and creative sides. Simple, stylish, and evolving over time.</p>
+          <a href="index.html" class="project-link">Main Page →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact me at <a href="mailto:yordanostkeflinkiel@gmail.com">yordanostkeflinkiel@gmail.com</a><br />
+  </footer>
+</body>
+<script>
+  document.getElementById('scroll-pet').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</html>
